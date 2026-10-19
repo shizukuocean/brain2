@@ -1,0 +1,5 @@
+{
+  "brain2_manager": "修复线上更新通道：应用现在持续读取永久 Preview 清单，可发现后续版本并准确打开 Launcher 的 Manager 更新页。",
+  "dev_helper": "修复线上更新通道：应用现在持续读取永久 Preview 清单，可发现后续版本并准确打开 Launcher 的 Helper 更新页。",
+  "meow_launcher": "修复线上更新通道并强化发布门禁：永久清单与版本安装包地址分离，继续由 Launcher 统一校验、安装、回滚和重启。"
+}

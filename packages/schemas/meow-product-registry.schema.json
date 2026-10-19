@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://meow.local/schemas/meow-product-registry-0.1.json",
+  "title": "Meow Product Registry",
+  "type": "object",
+  "required": ["schema_version", "products"],
+  "properties": {
+    "schema_version": { "const": "0.1" },
+    "products": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "product_id",
+          "instance_id",
+          "installed",
+          "status",
+          "root_path",
+          "config_path",
+          "projects_path",
+          "version_path",
+          "capabilities",
+          "last_verified_at"
+        ],
+        "properties": {
+          "product_id": { "type": "string" },
+          "instance_id": { "type": "string" },
+          "installed": { "type": "boolean" },
+          "status": { "enum": ["ready", "needs_attention", "unavailable"] },
+          "root_path": { "type": "string" },
+          "config_path": { "type": "string" },
+          "projects_path": { "type": "string" },
+          "version_path": { "type": "string" },
+          "capabilities": { "type": "array", "items": { "type": "string" } },
+          "last_verified_at": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

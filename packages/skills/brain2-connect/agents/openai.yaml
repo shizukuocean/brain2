@@ -1,0 +1,4 @@
+interface:
+  display_name: "Brain2 Connect"
+  short_description: "Connect an agent to a governed local Brain2 workspace"
+  default_prompt: "Connect to Brain2, read the governed bootstrap, and complete the requested task."

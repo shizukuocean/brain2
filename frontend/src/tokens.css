@@ -1,0 +1,8 @@
+:root {
+  --color-paper: var(--color-canvas);
+  --color-paper-2: var(--color-surface-soft);
+  --font-body: var(--font-cn);
+  --font-outlier: var(--font-mono);
+  --radius-input: var(--radius-control);
+  --rule-hair: 1px;
+}

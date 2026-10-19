@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://meow.local/schemas/brain2-projects-0.3.json",
+  "title": "Brain2 Project Registry",
+  "type": "object",
+  "required": ["schema_version", "projects"],
+  "properties": {
+    "schema_version": {
+      "enum": ["0.1", "0.2", "0.3"]
+    },
+    "projects": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/project"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "project": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "mode",
+        "brain2_entry",
+        "status",
+        "goal",
+        "tags",
+        "created_at",
+        "updated_at"
+      ],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "name": { "type": "string", "minLength": 1 },
+        "entity_kind": { "enum": ["code_project", "application", "product", "needs_verification", ""] },
+        "parent_project_id": { "type": "string" },
+        "lifecycle_stage": { "enum": ["discovery", "active", "paused", "completed", "archived", "needs_verification", ""] },
+        "mode": { "enum": ["internal", "external"] },
+        "source_path": { "type": ["string", "null"] },
+        "repository_url": { "type": "string" },
+        "default_branch": { "type": "string" },
+        "brain2_entry": { "type": "string", "minLength": 1 },
+        "status": { "type": "string", "minLength": 1 },
+        "goal": { "type": "string" },
+        "tags": { "type": "array", "items": { "type": "string" } },
+        "manifest_path": { "type": "string" },
+        "manifest_version": { "type": "string" },
+        "asset_status": { "enum": ["registered", "pending", ""] },
+        "path_status": { "enum": ["verified", "missing", "stale", "unknown", ""] },
+        "truth_status": { "enum": ["user_confirmed", "needs_confirmation", ""] },
+        "connection_gate": { "enum": ["user_confirmation_required", ""] },
+        "capabilities": { "type": "array", "items": { "type": "string" } },
+        "assets": { "type": "array", "items": { "$ref": "#/$defs/asset" } },
+        "created_at": { "type": "string" },
+        "updated_at": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "asset": {
+      "type": "object",
+      "required": ["id", "role", "path", "path_kind", "status", "truth", "access"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "role": { "type": "string", "minLength": 1 },
+        "path": { "type": "string", "minLength": 1 },
+        "path_kind": { "enum": ["absolute", "brain2_relative", "url"] },
+        "device_id": { "type": "string" },
+        "status": { "enum": ["verified", "missing", "stale", "unknown"] },
+        "truth": { "enum": ["current", "historical", "handoff", "do_not_use"] },
+        "access": { "enum": ["metadata_only", "read", "scan_candidate", "blocked"] },
+        "consumers": { "type": "array", "items": { "type": "string" } }
+      },
+      "additionalProperties": false
+    }
+  }
+}

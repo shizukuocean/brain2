@@ -1,0 +1,5 @@
+{
+  "brain2_manager": "随 Launcher 统一 Meow System 安装位置版重新生成完整 Preview 安装包；Manager 产品功能、单一更新入口、青色小猫图标与数据边界保持不变。",
+  "dev_helper": "随 Launcher 统一 Meow System 安装位置版重新生成完整 Preview 安装包；Wails 轻量桌面、旧 Electron 数据接管、Brain2 共享事件同步、绿色小猫图标与更新契约保持不变。",
+  "meow_launcher": "新增统一 Meow System 安装位置设置：用户只需选择一次，后续 Manager 与 Helper 直接安装到对应子目录，不再逐个询问；已安装应用不会被静默移动。03 入口改为“设置”，保留账号状态并收口为 Meow 系列的极简视觉层级。"
+}

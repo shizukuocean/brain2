@@ -1,0 +1,35 @@
+# Build outputs
+/dist/
+/build/*
+!/build/windows/
+/build/windows/*
+!/build/windows/icon.ico
+
+# Go caches and test artifacts
+*.test
+*.out
+coverage.*
+
+# Wails / web dependencies (reserved for the later UI phase)
+/frontend/node_modules/
+/frontend/dist/
+/launcherfrontend/
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+
+# Editors and operating systems
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Generated locally from audited source
+/internal/agentconnect/assets/brain2-mcp-host-windows-amd64.exe
+/internal/agentconnect/assets/brain2-mcp-host-linux-amd64
+
+/frontend/dist-launcher/
